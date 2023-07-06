@@ -1,6 +1,6 @@
 /* @flow */
 import NextLink from "next/link";
-import * as React from "react";
+import React, * as React from "react";
 
 type Props = {
   children?: any,
