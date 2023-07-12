@@ -1,9 +1,9 @@
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
-module.exports = {
+export default {
   // for webpack-bundle-analyzer
   // https://github.com/zeit/next.js/blob/063db7099cf38a22f5a935839e3023ad83fcf2a3/examples/with-webpack-bundle-analyzer/next.config.js
-  webpack: function(config) {
+  webpack(config) {
     if (process.env.ANALYZE) {
       config.plugins.push(
         new BundleAnalyzerPlugin({
@@ -17,12 +17,14 @@ module.exports = {
   },
 
   // for static site export
-  exportPathMap: () => ({
-    "/": { page: "/" },
-    "/about": { page: "/about" },
-    "/password-reset": { page: "/password-reset" },
-    "/password-reset-sent": { page: "/password-reset-sent" },
-    "/users": { page: "/users" },
-    "/users/edit": { page: "/users/edit" }
-  })
+  exportPathMap() {
+    return {
+      "/": { page: "/" },
+      "/about": { page: "/about" },
+      "/password-reset": { page: "/password-reset" },
+      "/password-reset-sent": { page: "/password-reset-sent" },
+      "/users": { page: "/users" },
+      "/users/edit": { page: "/users/edit" }
+    };
+  }
 };

@@ -1,5 +1,5 @@
 /* @flow */
-import * as React from "react";
+import React, * as React from "react";
 
 import Layout from "../components/Layout";
 import appEnhancer from "../lib/appEnhancer";
